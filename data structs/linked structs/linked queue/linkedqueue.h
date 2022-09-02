@@ -10,8 +10,6 @@ typedef struct
     linkedlist list;
 } queue;
 
-///pass NULL if you don't want a equals function
-
 static inline queue* init_queue()
 {
     return calloc(1, sizeof(queue));
