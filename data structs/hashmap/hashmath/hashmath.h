@@ -1,5 +1,5 @@
-#ifndef CPUSCHEDULERSIMULATOR_HASHMATH_H
-#define CPUSCHEDULERSIMULATOR_HASHMATH_H
+#ifndef HASHMATH_H
+#define HASHMATH_H
 
 #include <corecrt.h>
 #include <stdbool.h>
