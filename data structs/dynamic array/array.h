@@ -1,5 +1,5 @@
-#ifndef CPUSCHEDULERSIMULATOR_ARRAY_H
-#define CPUSCHEDULERSIMULATOR_ARRAY_H
+#ifndef ARRAY_H
+#define ARRAY_H
 #include <stdbool.h>
 
 typedef struct
@@ -33,3 +33,4 @@ static inline void arr_msort(array* a, int(*cmp)(const void*, const void*))
 }
 
 #endif
+
