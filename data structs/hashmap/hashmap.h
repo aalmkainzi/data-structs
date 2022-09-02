@@ -1,5 +1,5 @@
-#ifndef CPUSCHEDULERSIMULATOR_HASHMAP_H
-#define CPUSCHEDULERSIMULATOR_HASHMAP_H
+#ifndef HASHMAP_H
+#define HASHMAP_H
 
 #include <corecrt.h>
 #include <stdbool.h>
