@@ -1,5 +1,5 @@
-#ifndef CPUSCHEDULERSIMULATOR_LINKEDQUEUE_H
-#define CPUSCHEDULERSIMULATOR_LINKEDQUEUE_H
+#ifndef LINKEDQUEUE_H
+#define LINKEDQUEUE_H
 
 #include <stdbool.h>
 #include <stdlib.h>
@@ -42,4 +42,4 @@ static inline void free_q(queue* q, bool free_data)
     free_nodes(q->list.head, free_data);
     free(q);
 }
-#endif //CPUSCHEDULERSIMULATOR_LINKEDQUEUE_H
+#endif
