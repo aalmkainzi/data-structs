@@ -3,10 +3,8 @@
 
 #include <corecrt.h>
 #include <stdbool.h>
-///a hashmap implementation using external chaining for collisions
 
-//make a struct that doesn't use 'array' but instead put the keys and vals in the same buffer just group the keys with each other and the vals with each other like this:
-//k1k2k3k4k5k6k7k8_____v1v2v3v4v5v6v7v8_____
+///a hashmap implementation using external chaining for collisions
 
 typedef struct
 {
