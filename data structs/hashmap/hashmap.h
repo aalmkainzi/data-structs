@@ -37,7 +37,6 @@ void hashmap_add(hashmap*, void*, void*);
 bool hashmap_contains_key(hashmap*, void*);
 bool hashmap_delete(hashmap*, void*);
 void* hashmap_get_val_of(hashmap*, void*);
-///returns old val so you can free it
 bool hashmap_update(hashmap*, void*, void*);
 void free_hashmap(hashmap*);
 void hashmap_to_arr(hashmap*, void*buffer);
