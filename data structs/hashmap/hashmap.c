@@ -34,15 +34,21 @@ int hm_hash(hashmap* hm, void* key)
 void hashmap_add(hashmap*hm, void* key, void* val)
 {
     pair_soa soa = hm->arrays[hm_hash(hm, key)];
-    if(soa.cap == soa.size)
+    if(soa.cap==0)
+    {
+        soa.cap = 8;
+        soa.buffer = malloc((hm->key_size*soa.cap) + (hm->val_size*soa.cap));
+        soa.v_start = soa.buffer + (hm->key_size*soa.cap);
+    }
+    else if(soa.cap == soa.size)
     {
         soa.cap *= 2;
         soa.buffer = realloc(soa.buffer, (soa.cap * hm->key_size) + (soa.cap * hm->val_size));
-        soa.v_start = soa.buffer + (hm->key_size * soa.size); //because we reallocated the buffer
-        memmove(soa.v_start+(hm->val_size * soa.size), soa.v_start, hm->val_size*(soa.size)); //should work, test it though
+        soa.v_start = soa.buffer + (hm->key_size * soa.cap); //because we reallocated the buffer
+        memmove(soa.v_start+(hm->val_size * soa.size), soa.v_start, hm->val_size*(soa.size)); //TODO this is hacky. only works if growth rate is 2, test it though
     }
     memcpy(soa.buffer+(hm->key_size*soa.k_empty_start), key, hm->key_size);
-    memcpy(soa.buffer+(hm->val_size*soa.v_empty_start), val, hm->val_size);
+    memcpy(soa.v_start+(hm->val_size*soa.v_empty_start), val, hm->val_size);
     soa.size++;
     soa.k_empty_start++;
     soa.v_empty_start++;
