@@ -2,8 +2,6 @@
 #define CPUSCHEDULERSIMULATOR_ARRAY_H
 #include <stdbool.h>
 
-//TODO replace all old array uses with this one
-
 typedef struct
 {
     void *arr;
