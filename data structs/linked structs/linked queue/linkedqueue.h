@@ -10,6 +10,7 @@ typedef struct
     linkedlist list;
 } queue;
 
+
 static inline queue* init_queue()
 {
     return calloc(1, sizeof(queue));

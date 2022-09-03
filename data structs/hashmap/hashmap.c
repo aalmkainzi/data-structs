@@ -70,7 +70,11 @@ bool hashmap_delete(hashmap* hm, void* key)
     int index = -1;
     for (int i = 0; i < soa.size; ++i)
     {
-        if(hm->equals(soa.buffer + (i * hm->key_size), key)) { index = i; break;}
+        if(hm->equals(soa.buffer + (i * hm->key_size), key))
+        {
+            index = i;
+            break;
+        }
     }
     if(index==-1) return false;
     memcpy(soa.buffer + (index * hm->key_size), soa.buffer + ((soa.k_empty_start - 1) * hm->key_size), hm->key_size);
@@ -103,7 +107,11 @@ bool hashmap_update(hashmap* hm, void* key, void* new_val)
     int index = -1;
     for (int i = 0; i < soa.size; ++i)
     {
-        if(hm->equals(key, soa.buffer + (i * hm->key_size))) { index = i; break;}
+        if(hm->equals(key, soa.buffer + (i * hm->key_size)))
+        {
+            index = i;
+            break;
+        }
     }
     if(index!=-1)
     {
